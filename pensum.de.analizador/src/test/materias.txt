@@ -1,0 +1,19 @@
+Calculo Diferencial
+CAD
+Bachillerato
+4
+
+Calculo de Varias Variables
+CVV
+CAI
+4
+
+Calculo Integral
+CAI
+CAD
+4
+
+Ecuaciones Diferenciales
+EDI
+CVV, CAI
+4
