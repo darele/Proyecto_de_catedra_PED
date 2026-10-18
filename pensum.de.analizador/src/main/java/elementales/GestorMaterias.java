@@ -31,7 +31,6 @@ public class GestorMaterias {
                     return false;
                 }
             }
-            System.out.println("materia terminada: " + materia.getCodigo());
             materia.terminar(listaMaterias);
         }
         return true;

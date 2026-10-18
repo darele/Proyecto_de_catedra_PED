@@ -12,6 +12,11 @@ public class Materia {
     private String codigo;
     private String nombre;
     private int unidadesValorativas;
+
+    public List<Materia> getPrerequisitos() {
+        return prerequisitos;
+    }
+
     private final List<Materia> prerequisitos;
 
     public List<String> getCodigoPrerequisitos() {

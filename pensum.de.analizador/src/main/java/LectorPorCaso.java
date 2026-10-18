@@ -1,10 +1,9 @@
 import elementales.GestorMaterias;
 import elementales.Grafo;
 import elementales.Materia;
+import elementales.Vertice;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class LectorPorCaso {
     private final Scanner sc;
@@ -13,7 +12,7 @@ public class LectorPorCaso {
     }
 
     private Materia leerMateria(String line) {
-        Materia materia = null;
+        Materia materia;
         String nombre, codigo;
         int unidadesValorativas;
         List<String> prerequisitos;
@@ -65,9 +64,21 @@ public class LectorPorCaso {
             gestorMaterias.addMateria(materia);
         }
         if (gestorMaterias.crearMaterias()) {
-            grafo = null;
+            int indice = 0;
+            Map<Materia, Vertice> materiaVerticeMap = new HashMap<>();
+            List<Vertice> vertices = new ArrayList<>();
             for (Materia materia : gestorMaterias.getListaMaterias().values()) {
-                System.out.println(materia);
+                Vertice vertice = new Vertice(indice++, materia);
+                materiaVerticeMap.put(materia, vertice);
+                vertices.add(vertice);
+            }
+            grafo = new Grafo(vertices);
+            for (Materia materia1 : gestorMaterias.getListaMaterias().values()) {
+                for (Materia materia2 : materia1.getPrerequisitos()) {
+                    Vertice verticeOrigen = materiaVerticeMap.get(materia2);
+                    Vertice verticeDestino = materiaVerticeMap.get(materia1);
+                    verticeOrigen.addVecino(verticeDestino);
+                }
             }
             return grafo;
         }

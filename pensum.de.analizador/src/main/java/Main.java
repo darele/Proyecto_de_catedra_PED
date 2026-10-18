@@ -13,7 +13,7 @@ public class Main {
             LectorPorCaso lector =  new LectorPorCaso(sc);
             Grafo pensum = lector.crearGrafo();
             if (pensum != null) {
-                System.out.println("exito");
+                System.out.println("exito, grafo leido:\n\n" + pensum.toString());
             }
         } catch (FileNotFoundException e) {
             System.out.println("No existe el archivo " + caso1);
