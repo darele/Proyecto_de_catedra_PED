@@ -1,3 +1,5 @@
+import elementales.Grafo;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -8,9 +10,10 @@ public class Main {
         String caso1 = "pensum.de.analizador/src/test/materias.txt";
         try {
             Scanner sc = new Scanner(new File(caso1));
-            while (sc.hasNextLine()) {
-                String line = sc.nextLine();
-                System.out.println(line);
+            LectorPorCaso lector =  new LectorPorCaso(sc);
+            Grafo pensum = lector.crearGrafo();
+            if (pensum != null) {
+                System.out.println("exito");
             }
         } catch (FileNotFoundException e) {
             System.out.println("No existe el archivo " + caso1);
