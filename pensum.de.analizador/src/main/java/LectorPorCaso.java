@@ -64,11 +64,10 @@ public class LectorPorCaso {
             gestorMaterias.addMateria(materia);
         }
         if (gestorMaterias.crearMaterias()) {
-            int indice = 0;
             Map<Materia, Vertice> materiaVerticeMap = new HashMap<>();
             List<Vertice> vertices = new ArrayList<>();
             for (Materia materia : gestorMaterias.getListaMaterias().values()) {
-                Vertice vertice = new Vertice(indice++, materia);
+                Vertice vertice = new Vertice(materia);
                 materiaVerticeMap.put(materia, vertice);
                 vertices.add(vertice);
             }
@@ -77,6 +76,7 @@ public class LectorPorCaso {
                 for (Materia materia2 : materia1.getPrerequisitos()) {
                     Vertice verticeOrigen = materiaVerticeMap.get(materia2);
                     Vertice verticeDestino = materiaVerticeMap.get(materia1);
+                    verticeDestino.incrementarDegree();
                     verticeOrigen.addVecino(verticeDestino);
                 }
             }

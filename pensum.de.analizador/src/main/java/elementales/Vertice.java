@@ -4,12 +4,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Vertice {
-    private final int indice;
     private final Materia materia;
     private final List<Vertice> vecinos;
+    private int indegree;
 
-    public int getIndice() {
-        return indice;
+    public int getIndegree() {
+        return indegree;
+    }
+
+    public void reducirDegree() {
+        indegree--;
+    }
+
+    public void incrementarDegree() {
+        indegree++;
     }
 
     public Materia getMateria() {
@@ -24,10 +32,10 @@ public class Vertice {
         vecinos.add(vertice);
     }
 
-    public Vertice(int indice, Materia materia) {
-        this.indice = indice;
+    public Vertice(Materia materia) {
         this.materia = materia;
         this.vecinos = new ArrayList<>();
+        this.indegree = 0;
     }
 
     @Override
