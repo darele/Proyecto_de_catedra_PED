@@ -9,6 +9,14 @@ public class Materia {
         return codigo;
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
+    public int getUnidadesValorativas() {
+        return unidadesValorativas;
+    }
+
     private String codigo;
     private String nombre;
     private int unidadesValorativas;
@@ -34,6 +42,7 @@ public class Materia {
     }
 
     public void terminar(Map<String, Materia> listaMaterias) {
+        prerequisitos.clear();
         for (String codigo : codigoPrerequisitos) {
             if (codigo.equals("Bachillerato")) {
                 continue;

@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.Executable;
 
 import java.util.List;
+import java.util.Scanner;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -36,5 +37,14 @@ public class TesterGrafo {
             assertEquals(materia.getCodigo(), respuesta1.get(index++));
         }
         System.out.println("Test 1 exitoso");
+    }
+
+    @Test
+    void detectaCicloEnPrerequisitos() {
+        String casoCiclico = "Materia A\nA\nB\n4\n\nMateria B\nB\nA\n4\n";
+        Grafo pensum = new LectorPorCaso(new Scanner(casoCiclico)).crearGrafo();
+
+        assertTrue(pensum.hayCiclo());
+        assertNull(pensum.ordenTopologico());
     }
 }
