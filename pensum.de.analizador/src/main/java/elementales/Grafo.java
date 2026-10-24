@@ -95,4 +95,26 @@ public class Grafo {
         }
         return this.ciclo;
     }
+
+    public void addMateria(Materia materia) {
+        reset();
+        Map<String, Materia> mapCodigoMatreria = new HashMap<>();
+        Map<Materia, Vertice> mapMateriaVertice = new HashMap<>();
+        for (Vertice v : vertices) {
+            Materia m = v.getMateria();
+            mapCodigoMatreria.put(m.getCodigo(), v.getMateria());
+            mapMateriaVertice.put(m, v);
+        }
+        materia.terminar(mapCodigoMatreria);
+        Vertice vertice = new Vertice(materia);
+        for (Materia m : materia.getPrerequisitos()) {
+            mapMateriaVertice.get(m).addVecino(vertice);
+        }
+        vertices.add(vertice);
+        for (Vertice u : vertices) {
+            for (Vertice v : u.getVecinos()) {
+                v.incrementarDegree();
+            }
+        }
+    }
 }

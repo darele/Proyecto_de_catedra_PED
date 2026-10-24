@@ -2,6 +2,7 @@ package elementales;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class Vertice {
     private final Materia materia;
@@ -23,6 +24,7 @@ public class Vertice {
 
     void reset() {
         visitado = false;
+        indegree = 0;
     }
 
     void visitar() {
@@ -61,4 +63,5 @@ public class Vertice {
     public boolean isVisitado() {
         return visitado;
     }
+
 }

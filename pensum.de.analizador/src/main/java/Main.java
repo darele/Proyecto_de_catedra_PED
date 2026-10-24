@@ -1,5 +1,6 @@
 import elementales.Grafo;
 import elementales.Materia;
+import elementales.Vertice;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -11,13 +12,13 @@ public class Main {
         System.out.println("Working Directory = " + System.getProperty("user.dir"));
         String directorio = "pensum.de.analizador/src/test/Casos_de_prueba/";
         String[] casos = {
-//                "materias.txt",
+                "materias.txt",
 //                "caso1_cadena_prerrequisitos.txt",
 //                "caso2_multiples_prerrequisitos.txt",
 //                "caso3_ciclo_prerrequisitos.txt",
 //                "caso4_prerrequisito_inexistente.txt",
 //                "pensum_completo_UDB.txt",
-                "caso5_prerrequisito_UV.txt"
+//                "caso5_prerrequisito_UV.txt"
         };
         for  (String s : casos) {
             System.out.println("\n\nProcesando " + s + "\n\n");
@@ -42,6 +43,14 @@ public class Main {
                     System.out.print(materia.getCodigo() + "->");
                 }
                 System.out.println("Graduado");
+
+//                pensum.addMateria(new Materia("OYF201", "Oscilaciones y Fluidos", 4, List.of("CAD941", "4")));
+//                orden = pensum.ordenTopologico();
+//                System.out.println("Orden de cursado encontrado\n");
+//                for (Materia materia : orden) {
+//                    System.out.print(materia.getCodigo() + "->");
+//                }
+//                System.out.println("Graduado");
             } catch (FileNotFoundException e) {
                 System.out.println("No existe el archivo " + caso);
             }
