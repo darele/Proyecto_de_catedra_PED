@@ -17,6 +17,14 @@ public class Grafo {
         ciclo = false;
     }
 
+    private void reset() {
+        for (Vertice v : vertices) {
+            v.reset();
+        }
+        ordenTopologico.clear();
+        ciclo = false;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -27,19 +35,41 @@ public class Grafo {
         return sb.toString();
     }
 
+    public void addVertice(Vertice v) {
+        vertices.add(v);
+        reset();
+    }
+
     private void calcularOrdenTopologico() {
         Queue<Vertice> q = new ArrayDeque<>();
+
+        int uvAcumuladas = 0;
         for (Vertice v : vertices) {
-            if (v.getIndegree() == 0) {
+            if (v.getIndegree() == 0 && uvAcumuladas >= v.getMateria().getPrerequisitoUV()) {
                 q.add(v);
             }
         }
-        while (!q.isEmpty()) {
+        while (true) {
+            if (q.isEmpty()) {
+                for (Vertice v : vertices) {
+                    if (!v.isVisitado()
+                            && v.getIndegree() == 0
+                            && uvAcumuladas >= v.getMateria().getPrerequisitoUV()) {
+                        q.add(v);
+                    }
+                }
+                if (q.isEmpty()) {
+                    break;
+                }
+            }
             Vertice u = q.poll();
-            ordenTopologico.add(u.getMateria());
+            u.visitar();
+            Materia materia = u.getMateria();
+            ordenTopologico.add(materia);
+            uvAcumuladas += materia.getUnidadesValorativas();
             for (Vertice v : u.getVecinos()) {
                 v.reducirDegree();
-                if (v.getIndegree() == 0) {
+                if (v.getIndegree() == 0 && uvAcumuladas >= v.getMateria().getPrerequisitoUV()) {
                     q.add(v);
                 }
             }

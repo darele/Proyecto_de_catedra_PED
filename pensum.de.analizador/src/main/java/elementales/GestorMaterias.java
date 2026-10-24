@@ -23,12 +23,16 @@ public class GestorMaterias {
                 if (codigo.equals("Bachillerato")) {
                     continue;
                 }
-                if (!listaMaterias.containsKey(codigo)) {
-                    System.err.println(
-                            "No se puede crear la materia con el " +
-                            "codigo: " + codigo + " porque los prerequisitos " +
-                            "no existen en el pensum");
-                    return false;
+                try {
+                    Integer.parseInt(codigo);
+                } catch (NumberFormatException e) {
+                    if (!listaMaterias.containsKey(codigo)) {
+                        System.err.println(
+                                "No se puede crear la materia con el " +
+                                        "codigo: " + materia.getCodigo() + " porque los prerequisitos " +
+                                        "no existen en el pensum");
+                        return false;
+                    }
                 }
             }
             materia.terminar(listaMaterias);

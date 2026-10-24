@@ -20,6 +20,11 @@ public class Materia {
     private String codigo;
     private String nombre;
     private int unidadesValorativas;
+    private int prerequisitoUV;
+
+    public int getPrerequisitoUV() {
+        return prerequisitoUV;
+    }
 
     public List<Materia> getPrerequisitos() {
         return prerequisitos;
@@ -39,6 +44,7 @@ public class Materia {
         this.unidadesValorativas = uV;
         this.codigoPrerequisitos = prerequisitos;
         this.prerequisitos = new ArrayList<>();
+        this.prerequisitoUV = 0;
     }
 
     public void terminar(Map<String, Materia> listaMaterias) {
@@ -47,8 +53,12 @@ public class Materia {
             if (codigo.equals("Bachillerato")) {
                 continue;
             }
-            Materia materia = listaMaterias.get(codigo);
-            prerequisitos.add(materia);
+            try {
+                prerequisitoUV = Integer.parseInt(codigo);
+            } catch (NumberFormatException e) {
+                Materia materia = listaMaterias.get(codigo);
+                prerequisitos.add(materia);
+            }
         }
     }
 

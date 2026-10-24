@@ -7,6 +7,7 @@ public class Vertice {
     private final Materia materia;
     private final List<Vertice> vecinos;
     private int indegree;
+    private boolean visitado;
 
     public int getIndegree() {
         return indegree;
@@ -18,6 +19,14 @@ public class Vertice {
 
     public void incrementarDegree() {
         indegree++;
+    }
+
+    void reset() {
+        visitado = false;
+    }
+
+    void visitar() {
+        visitado = true;
     }
 
     public Materia getMateria() {
@@ -36,6 +45,7 @@ public class Vertice {
         this.materia = materia;
         this.vecinos = new ArrayList<>();
         this.indegree = 0;
+        visitado = false;
     }
 
     @Override
@@ -46,5 +56,9 @@ public class Vertice {
             sb.append(v.materia.getCodigo() + ", ");
         }
         return sb.toString();
+    }
+
+    public boolean isVisitado() {
+        return visitado;
     }
 }

@@ -15,8 +15,9 @@ public class Main {
 //                "caso1_cadena_prerrequisitos.txt",
 //                "caso2_multiples_prerrequisitos.txt",
 //                "caso3_ciclo_prerrequisitos.txt",
-                "caso4_prerrequisito_inexistente.txt",
-//                "pensum_completo_UDB.txt"
+//                "caso4_prerrequisito_inexistente.txt",
+//                "pensum_completo_UDB.txt",
+                "caso5_prerrequisito_UV.txt"
         };
         for  (String s : casos) {
             System.out.println("\n\nProcesando " + s + "\n\n");
@@ -26,12 +27,13 @@ public class Main {
                 LectorPorCaso lector =  new LectorPorCaso(sc);
                 Grafo pensum = lector.crearGrafo();
                 if (pensum != null) {
-                    System.out.println("exito, grafo leido:\n\n" + pensum);
+                    if (pensum.hayCiclo()) {
+                        System.err.println("Imposible cursar la carrera, hay dependencias ciclicas o UV insuficientes para alguna materia");
+                        continue;
+                    } else {
+                        System.out.println("exito, grafo leido:\n\n" + pensum);
+                    }
                 } else {
-                    continue;
-                }
-                if (pensum.hayCiclo()) {
-                    System.err.println("Imposible cursar la carrera, hay dependencias ciclicas");
                     continue;
                 }
                 List<Materia> orden = pensum.ordenTopologico();
