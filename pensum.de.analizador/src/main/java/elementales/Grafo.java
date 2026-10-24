@@ -35,11 +35,6 @@ public class Grafo {
         return sb.toString();
     }
 
-    public void addVertice(Vertice v) {
-        vertices.add(v);
-        reset();
-    }
-
     private void calcularOrdenTopologico() {
         Queue<Vertice> q = new ArrayDeque<>();
 

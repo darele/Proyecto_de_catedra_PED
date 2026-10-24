@@ -12,13 +12,13 @@ public class Main {
         System.out.println("Working Directory = " + System.getProperty("user.dir"));
         String directorio = "pensum.de.analizador/src/test/Casos_de_prueba/";
         String[] casos = {
-                "materias.txt",
+//                "materias.txt",
 //                "caso1_cadena_prerrequisitos.txt",
 //                "caso2_multiples_prerrequisitos.txt",
 //                "caso3_ciclo_prerrequisitos.txt",
 //                "caso4_prerrequisito_inexistente.txt",
 //                "pensum_completo_UDB.txt",
-//                "caso5_prerrequisito_UV.txt"
+                "caso5_prerrequisito_UV.txt"
         };
         for  (String s : casos) {
             System.out.println("\n\nProcesando " + s + "\n\n");

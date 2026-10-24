@@ -5,6 +5,14 @@ import java.util.List;
 import java.util.Map;
 
 public class Materia {
+    private String codigo;
+
+    private String nombre;
+    private int unidadesValorativas;
+    private int prerequisitoUV;
+    private final List<Materia> prerequisitos;
+    private final List<String> codigoPrerequisitos;
+
     public String getCodigo() {
         return codigo;
     }
@@ -13,26 +21,17 @@ public class Materia {
         return unidadesValorativas;
     }
 
-    private String codigo;
-    private String nombre;
-    private int unidadesValorativas;
-    private int prerequisitoUV;
+    public List<Materia> getPrerequisitos() {
+        return prerequisitos;
+    }
 
     public int getPrerequisitoUV() {
         return prerequisitoUV;
     }
 
-    public List<Materia> getPrerequisitos() {
-        return prerequisitos;
-    }
-
-    private final List<Materia> prerequisitos;
-
     public List<String> getCodigoPrerequisitos() {
         return codigoPrerequisitos;
     }
-
-    private final List<String> codigoPrerequisitos;
 
     public Materia(String codigo, String nombre, int uV, List<String> prerequisitos) {
         this.codigo = codigo;
