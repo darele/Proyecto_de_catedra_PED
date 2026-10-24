@@ -1,0 +1,24 @@
+Cálculo Diferencial
+CAD941
+Bachillerato
+4
+
+Cálculo Integral
+CAI941
+CAD941
+4
+
+Analisis Vectorial y Matricial
+AVM941
+Bachillerato
+4
+
+Cálculo de Varias Variables
+CVV941
+AVM941, CAI941
+4
+
+Ecuaciones Diferenciales
+EDI941
+CVV941
+4

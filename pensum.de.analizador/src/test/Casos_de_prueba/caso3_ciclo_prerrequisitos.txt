@@ -1,0 +1,19 @@
+Antropologia Filosofica
+ANF
+Bachillerato
+4
+
+Calculo de Varias Variables
+CVV941
+CAI941
+4
+
+Cálculo Diferencial
+CAD941
+CVV941
+4
+
+Cálculo Integral
+CAI941
+CAD941
+4

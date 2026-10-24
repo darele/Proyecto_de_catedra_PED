@@ -1,0 +1,174 @@
+Cálculo Diferencial
+CAD941
+Bachillerato
+4
+
+Química General
+QUG941
+Bachillerato
+4
+
+Expresión Oral y Escrita
+EOE901
+Bachillerato
+4
+
+Programación Estructurada
+PRE941
+Bachillerato
+4
+
+Álgebra Vectorial y Matrices
+AVM941
+Bachillerato
+4
+
+Cálculo Integral
+CAI941
+CAD941
+4
+
+Cinemática y Dinámica de Partículas
+CDP941
+CAD941
+4
+
+Programación Orientada a Objetos
+POO941
+PRE941
+4
+
+Modelamiento y Diseño de Base de Datos
+MDB941
+PRE941
+4
+
+Cálculo de Varias Variables
+CVV941
+AVM941, CAI941
+4
+
+Electricidad y Magnetismo
+EYM941
+QUG941, CAI941, CDP941
+4
+
+Estadística Aplicada
+ESA941
+CAI941
+4
+
+Programación con Estructuras de Datos
+PED941
+POO941
+4
+
+Análisis y Diseño de Sistemas Informáticos
+ADS941
+POO941, MDB941
+4
+
+Ecuaciones Diferenciales
+EDI941
+CVV941
+4
+
+Cálculo Avanzado
+CAA941
+CVV941
+4
+
+Oscilaciones, Fluidos y Calor
+OFC941
+CAI941, CDP941
+4
+
+Datawarehouse y Minería de Datos
+DMD941
+MDB941
+4
+
+Lenguajes Interpretados en el Cliente
+LIC941
+POO941, MDB941
+4
+
+Análisis de Circuitos Eléctricos
+ACE941
+EYM941
+4
+
+Gestión Ambiental
+GEA941
+QUG941
+4
+
+Análisis y Evaluación Económica
+AEE941
+ESA941
+4
+
+Antropología
+ANF901
+Bachillerato
+4
+
+Arquitectura de Computadoras
+ACO941
+PRE941, EYM941
+4
+
+Dirección de Proyectos
+DDP941
+ACE941, AEE941
+4
+
+Sistemas Operativos
+SIO941
+ACO941
+4
+
+Pensamiento Social Cristiano
+PSC901
+Bachillerato
+4
+
+Diseño de Redes de Datos
+DRD941
+Bachillerato
+4
+
+Aplicación de Métodos Numéricos
+AMN941
+PRE941, EDI941, ACE941
+4
+
+Ingeniería de Software
+ISO941
+ADS941, DDP941
+4
+
+Lenguajes Interpretados en el Servidor
+LIS941
+LIC941
+4
+
+Interconexión de Redes de Datos
+IRD941
+DRD941
+4
+
+Autómatas y Compiladores
+AYC941
+PED941, AMN941
+4
+
+Gestión de la Calidad del Software
+GCS941
+ISO941
+4
+
+Diseño y Programación de Software Multiplataforma
+DPS941
+PED941, OFC941
+4

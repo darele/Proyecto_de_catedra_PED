@@ -1,0 +1,34 @@
+Calculo Diferencial
+CAD941
+Bachillerato
+4
+
+Química General
+QUG941
+Bachillerato
+4
+
+Cálculo Integral
+CAI941
+CAD941
+4
+
+Cinemática y Dinámica de Partículas
+CDP941
+CAD941
+4
+
+Programacion Estructurada
+PRE941
+Bachillerato
+4
+
+Electricidad y Magnetismo
+EYM941
+QUG941, CAI941, CDP941
+4
+
+Arquitectura de Computadoras
+ACO941
+PRE941, EYM941
+4
