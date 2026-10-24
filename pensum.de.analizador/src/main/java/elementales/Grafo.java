@@ -3,10 +3,6 @@ package elementales;
 import java.util.*;
 
 public class Grafo {
-    public List<Vertice> getVertices() {
-        return vertices;
-    }
-
     private final List<Vertice> vertices;
     private final List<Materia> ordenTopologico;
     private boolean ciclo;

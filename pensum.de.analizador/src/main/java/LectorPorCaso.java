@@ -3,25 +3,10 @@ import elementales.Grafo;
 import elementales.Materia;
 import elementales.Vertice;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.*;
 
 public class LectorPorCaso {
-    private Scanner sc;
-
-    public LectorPorCaso(String filename) {
-        try {
-            this.sc = new Scanner(new File(filename));
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException("Archivo no encontrado", e);
-        }
-    }
-
-    public void close() {
-        this.sc.close();
-    }
-
+    private final Scanner sc;
     public LectorPorCaso(Scanner sc) {
         this.sc = sc;
     }
