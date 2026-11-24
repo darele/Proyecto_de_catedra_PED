@@ -112,4 +112,25 @@ public class Grafo {
             }
         }
     }
+    
+        public List<Materia> getMateriasBloqueadas() {
+        hayCiclo();
+        List<Materia> bloqueadas = new ArrayList<>();
+        for (Vertice v : vertices) {
+            if (!v.isVisitado()) {
+                bloqueadas.add(v.getMateria());
+            }
+        }
+        return bloqueadas;
+    }
+
+    public boolean bloqueoPorUV() {
+        hayCiclo();
+        for (Vertice v : vertices) {
+            if (!v.isVisitado() && v.getIndegree() == 0) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
